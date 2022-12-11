@@ -1,4 +1,19 @@
-:root{
-    background-color: black;
-        
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+:root {
+  background-color: black;
+}
+
+body{
+  
+  display: flex;
+  flex-flow: row ;
+}
+
+aside{
+  width: 40%;
+}
+
+main{
+  width: 60%;
 }

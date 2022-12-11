@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Sign-up/Register</title>
 </head>
-<body>
+
+<body class="container">
     <!-- Image container -->
-    <div></div>
+    <aside class="col">
+        <figure>
+            <picture>
+                <source media="(min-width:700px)" srcset="assets/computer.jpg">
+                <img src="assets/toronto.jpg" alt="computer">
+            </picture>
+            <figcaption>Photo by <a
+                    href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glenn
+                    Carstens-Peters</a> on <a
+                    href="https://unsplash.com/s/photos/person-studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </figcaption>
+        </figure>
+        <div class="banner">
+            <img src="assets/logo.jpg" alt="randomLogo">
+            <p>Luxury</p>
+        </div>
+    </aside>
     <!-- Form container -->
-    <main></main>
-    <!-- Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/s/photos/person-studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
-  
+    <main>
+        <p class="hero">This is a random form! And I am writing random stuff, this text doesn't make sense at all, but
+            you are still reading.<br> Thanks!</p>
+        <form action="/index" method="post" autocomplete="on">
+            <h4>Sign-up</h4>
+            <label for="fname">FIRST NAME</label><input name="fname" type="text"></input>
+            <label for="lname">LAST NAME</label><input name="lname" type="text"></input><br>
+            <label for="email">EMAIL</label><input type="text"></input>
+            <label for="phone">PHONE NUMBER</label><input type="text"></input><br>
+            <label for="password">PASSWORD</label><input type="text"></input>
+            <label for="confirm">CONFIRM PASSWORD</label><input name="confirm" type="text"></input><br>
+            <input type="submit" value="Create Account">
+        </form>
+        <p>Already have an account? Log in</p>
+    </main>
+
+
+    <!-- Photo by <a href="https://unsplash.com/@deninlawley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denin Lawley</a> on <a href="https://unsplash.com/s/photos/logo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+
 </body>
+
 </html>
