@@ -4,16 +4,109 @@
   background-color: black;
 }
 
-body{
-  
+body {
+  background-color: white;
+
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-flow: row ;
+  flex-flow: row wrap; /* flex-direction + flex-wrap*/
+  justify-content: center;
 }
 
-aside{
-  width: 40%;
+aside {
+  background: green;
+
+  width: 40vw;
+  position: relative;
 }
 
-main{
-  width: 60%;
+/* LEFT */
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
+/* Main image */
+picture > img {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  /* Crop the picture and center the image in the crop*/
+  object-fit: cover;
+  object-position: 50%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+figcaption {
+  background: rgb(0,0,0,0.5);
+  color:white;
+
+  width: 50%;
+  font-size: 2vh;
+
+  text-align: center;
+  position: absolute;
+  bottom: 2%;
+}
+
+a{
+  color:inherit;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(0, 0, 0, 0.5);
+
+  position: absolute;
+  top: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+h1{
+  font-size: 5vh;
+  color: white;
+}
+
+/* RIGHT */
+main {
+  background: grey;
+
+  width:60vw;
+
+  box-sizing: border-box;
+  padding-left: 2vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: baseline;
+
+}
+
+span{
+  display:block;
+  margin-top: 20px;
+}
+
+form{
+  margin-top: 20px;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+h4{
+  flex-basis: 100%; /* Occupy the whole line*/
+}
+
+
