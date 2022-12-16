@@ -169,6 +169,7 @@ form {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  row-gap: 20px;
 }
 
 form > div {
@@ -278,6 +279,7 @@ input[type="submit"]:focus {
 
   .banner {
     height: 10vh;
+    
   }
 
   main {
@@ -286,13 +288,14 @@ input[type="submit"]:focus {
     padding-bottom: 20px;
   }
 
-  .hero {
-    
-  }
-
   form {
+    height: fit-content;
+
     flex-wrap: wrap;
+
+    box-sizing: border-box;
   }
+  
 
   form > div {
     flex: content;
@@ -301,4 +304,13 @@ input[type="submit"]:focus {
   input[type="submit"] {
     min-width: fit-content;
   }
+  @media screen and (max-height:500px) {
+    picture{
+      display: none;
+    }
+    .banner{
+      position: static;
+    }
+  }
 }
+
