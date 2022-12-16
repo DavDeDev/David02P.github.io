@@ -19,23 +19,25 @@ body {
 
   width: 100vw;
   height: 100vh;
+  max-width: fit-content;
+  max-height: fit-content;
 
   display: flex;
-  flex-flow: row wrap; /* flex-direction + flex-wrap*/
+  flex-flow: row nowrap; /* flex-direction + flex-wrap*/
   justify-content: center;
 }
 
 /* #region LEFT */
 
 aside {
-  background: green;
+  background: white;
 
   width: 30vw;
+  max-height: 100vh;
   position: relative;
 }
 
 img {
-  height: auto;
   max-width: 100%;
   max-height: 100%;
 }
@@ -55,13 +57,14 @@ figure {
 }
 
 figcaption {
+  width: fit-content;
+
   background: rgb(0, 0, 0, 0.5);
   color: white;
 
-  width: fit-content;
-  font-size: 2vh;
+  font-size: 1.5vh;
+  text-align: center;
 
-  main-align: center;
   position: absolute;
   bottom: 2%;
 
@@ -93,21 +96,21 @@ a {
 h1 {
   font-family: "Nabla", cursive;
   font-size: 5vh;
-  color: white;
 }
 
 /* #endregion*/
 
 /* #region RIGHT */
+
 .padding {
   padding: 0 3vw; /* Adding padding left and right*/
+  box-sizing: border-box; /* Inside the box */
 }
 
 main {
   width: 70vw;
+  max-height: 100vh;
   background-color: var(--bg-main);
-
-  box-sizing: border-box;
 
   display: flex;
   flex-flow: column nowrap;
@@ -115,7 +118,7 @@ main {
   gap: 30px;
 }
 .hero {
-  margin-top: 0;
+  margin-top: 20px;
 
   font-family: var(--Roboto);
   font-size: 1.5rem;
@@ -135,7 +138,7 @@ h2 {
 
 form {
   height: 30rem;
-  max-width: 70vw;
+  width: 100%;
   background: var(--bg-form);
 
   display: flex;
@@ -159,7 +162,8 @@ input:focus {
   outline: none;
 }
 
-.input > input, .input>input:active {
+.input > input,
+.input > input:active {
   width: 80%;
   height: 2.5rem;
   background-color: #000;
@@ -172,21 +176,23 @@ input:focus {
   border: none;
   border-radius: 10px;
 }
-
-.input > input:invalid {
+.input > input:focus {
+  border: black;
+}
+.input > input:invalid:focus {
   border: red solid 1px;
-  background-color: white;
 }
 
 /* Submit */
 input[type="submit"] {
   width: 20vw;
+  max-width: 300px;
   margin: 0 auto;
   background-color: transparent;
 
   font-size: 15px;
 
-  padding: 10px 30px;
+  padding: 1rem 1 5rem;
 
   border: solid var(--main-color) 2px;
   border-radius: 50px;
@@ -202,12 +208,65 @@ input[type="submit"]:focus {
 
   transition: 800ms;
 }
+
+.footer {
+  margin: 0 auto 20px;
+}
 /* #endregion Form */
 
 /* #endregion RIGHT*/
 
-@media screen and (max-height:700px){
-  /* body{
-    flex-flow: column nowrap;
+@media screen and (max-width: 880px) {
+  * {
+    text-align: center;
   }
-} */
+  body {
+    flex-flow: column nowrap;
+    height: fit-content;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  picture {
+    width: 100%;
+    height: 20vh;
+    min-height: 175px;
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  picture > img {
+    width: 100vw;
+    min-height: 175px;
+    position: static;
+  }
+
+  .banner {
+    height: 10vh;
+  }
+
+  main {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .hero {
+    margin-top: 20px;
+  }
+
+  form {
+    flex-wrap: wrap;
+  }
+
+  form > div {
+    flex: content;
+  }
+
+  input[type="submit"] {
+    min-width: fit-content;
+  }
+}
