@@ -133,6 +133,10 @@ main {
   gap: 30px;
 }
 
+em{
+  font-style:italic ;
+}
+
 .hero {
   margin-top: 20px;
 
