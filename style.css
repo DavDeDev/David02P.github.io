@@ -296,7 +296,6 @@ input[type="submit"]:focus {
     box-sizing: border-box;
   }
   
-
   form > div {
     flex: content;
   }
@@ -307,9 +306,6 @@ input[type="submit"]:focus {
   @media screen and (max-height:500px) {
     picture{
       display: none;
-    }
-    .banner{
-      position: static;
     }
   }
 }
