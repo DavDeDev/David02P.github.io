@@ -1,28 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim&family=Nabla&family=Roboto:wght@500&display=swap");
 
 :root {
-  background-color: black;
+  --metallic-sunburst: hsla(39, 27%, 49%, 1);
+  --maize-crayola: hsla(45, 93%, 65%, 1);
+  --main-color: hsla(43, 74%, 47%, 1);
+  --bg-main: hsla(36, 14%, 7%, 1);
+  --bg-form: hsla(48, 100%, 16%, 1);
+}
+
+* {
+  color: var(--main-color);
+  font-family: "Megrim", "Roboto", cursive;
+  font-weight: bolder;
 }
 
 body {
-  background-color: white;
+  background-color: red;
 
   width: 100vw;
   height: 100vh;
+
   display: flex;
   flex-flow: row wrap; /* flex-direction + flex-wrap*/
   justify-content: center;
 }
 
+/* #region LEFT */
+
 aside {
   background: green;
 
-  width: 40vw;
+  width: 30vw;
   position: relative;
 }
 
-/* LEFT */
 img {
+  height: auto;
   max-width: 100%;
   max-height: 100%;
 }
@@ -30,7 +43,7 @@ img {
 picture > img {
   height: 100vh;
   width: 100vw;
-  display: block;
+  display: block; /* https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
   /* Crop the picture and center the image in the crop*/
   object-fit: cover;
   object-position: 50%;
@@ -42,19 +55,21 @@ figure {
 }
 
 figcaption {
-  background: rgb(0,0,0,0.5);
-  color:white;
+  background: rgb(0, 0, 0, 0.5);
+  color: white;
 
-  width: 50%;
+  width: fit-content;
   font-size: 2vh;
 
-  text-align: center;
+  main-align: center;
   position: absolute;
   bottom: 2%;
+
+  display: inline-block;
 }
 
-a{
-  color:inherit;
+a {
+  color: inherit;
 }
 
 /* Banner */
@@ -63,50 +78,136 @@ a{
   height: 10%;
   background-color: rgb(0, 0, 0, 0.5);
 
+  box-sizing: border-box; /*  https://stackoverflow.com/questions/34633024/padding-inside-div */
+  padding: 1vw;
+
   position: absolute;
   top: 20%;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1vw;
 }
 
-h1{
+h1 {
+  font-family: "Nabla", cursive;
   font-size: 5vh;
   color: white;
 }
 
-/* RIGHT */
-main {
-  background: grey;
+/* #endregion*/
 
-  width:60vw;
+/* #region RIGHT */
+.padding {
+  padding: 0 3vw; /* Adding padding left and right*/
+}
+
+main {
+  width: 70vw;
+  background-color: var(--bg-main);
 
   box-sizing: border-box;
-  padding-left: 2vw;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: baseline;
+  gap: 30px;
+}
+.hero {
+  margin-top: 0;
 
+  font-family: var(--Roboto);
+  font-size: 1.5rem;
+}
+span {
+  margin-top: 20px;
+  display: block;
 }
 
-span{
-  display:block;
-  margin-top: 20px;
+/* #region Form */
+
+h2 {
+  flex: 100%;
+
+  font-size: 2.5rem;
 }
 
-form{
-  margin-top: 20px;
+form {
+  height: 30rem;
+  max-width: 70vw;
+  background: var(--bg-form);
 
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
-h4{
-  flex-basis: 100%; /* Occupy the whole line*/
+form > div {
+  flex: 50%;
 }
 
+label {
+  font-size: larger;
 
+  display: block;
+  margin-bottom: 3px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input > input, .input>input:active {
+  width: 80%;
+  height: 2.5rem;
+  background-color: #000;
+
+  font-size: larger;
+
+  box-sizing: border-box;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+}
+
+.input > input:invalid {
+  border: red solid 1px;
+  background-color: white;
+}
+
+/* Submit */
+input[type="submit"] {
+  width: 20vw;
+  margin: 0 auto;
+  background-color: transparent;
+
+  font-size: 15px;
+
+  padding: 10px 30px;
+
+  border: solid var(--main-color) 2px;
+  border-radius: 50px;
+  transition: 800ms;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: var(--main-color);
+  color: #000;
+  border: solid var(--main-color) 2px;
+
+  transition: 800ms;
+}
+/* #endregion Form */
+
+/* #endregion RIGHT*/
+
+@media screen and (max-height:700px){
+  /* body{
+    flex-flow: column nowrap;
+  }
+} */
